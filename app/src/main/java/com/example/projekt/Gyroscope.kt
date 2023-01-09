@@ -47,4 +47,5 @@ class Gyroscope(context: Context) {
     fun unregister() {
         sensorManager!!.unregisterListener(sensorEventListener)
     }
+
 }

@@ -98,7 +98,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/timeRepeatsText"
+                android:id="@+id/repeatsText"
                 android:layout_width="0dp"
                 android:layout_height="250dp"
                 android:layout_margin="5dp"
@@ -115,7 +115,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/startStopButtonS"
+                android:id="@+id/startStopButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -132,7 +132,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/backButtonS"
+                android:id="@+id/backButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
