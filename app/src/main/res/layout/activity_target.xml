@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CounterActivity"
+    tools:context=".TargetActivity"
     android:background="#462255">
 
     <TableLayout
@@ -23,19 +23,19 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/exerciseText"
+                android:id="@+id/targetEditText"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:layout_weight="4"
                 android:gravity="center"
-                android:text="Powtórzenia: 0"
+                android:text="Cel dzienny: 0"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/addRepeatButton"
+                android:id="@+id/addTargetButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -47,7 +47,7 @@
                 app:backgroundTint="#E6AF2E" />
 
             <Button
-                android:id="@+id/removeRepeatButton"
+                android:id="@+id/removeTargetButton"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -59,92 +59,47 @@
                 app:backgroundTint="#E6AF2E" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/saveButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Zapisz"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                app:backgroundTint="#E6AF2E" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/targetText"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="Wykonanie celu dziennego 0/0"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
     </TableLayout>
-
-
-    <TableLayout
-        android:id="@+id/tableLayout2"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/backButtonT"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:backgroundTint="#6A7FDB"
+        android:text="Wróć"
+        android:textColor="#FFFFFF"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="0.65999997">
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/infoText"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="5"
-                android:gravity="center"
-                android:text="Komunikaty"
-                android:textColor="#ADBCA5"
-                android:textSize="30sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/repeatsText"
-                android:layout_width="0dp"
-                android:layout_height="250dp"
-                android:layout_margin="5dp"
-                android:layout_weight="5"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#ADBCA5"
-                android:textSize="220sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/startStopButton"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_margin="30dp"
-                android:layout_weight="1"
-                android:text="startstop"
-                android:textColor="#34E5FF"
-                android:textSize="22sp"
-                app:backgroundTint="#E6AF2E" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/backButton"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:text="wróć"
-                android:textColor="#34E5FF"
-                android:textSize="22sp"
-                app:backgroundTint="#E6AF2E" />
-
-        </TableRow>
-
-    </TableLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

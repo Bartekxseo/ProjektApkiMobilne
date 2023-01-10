@@ -9,45 +9,45 @@
     android:background="#462255">
 
     <Button
-        android:id="@+id/pushUpButton"
-        android:layout_width="256dp"
-        android:layout_height="82dp"
+        android:id="@+id/crunchesButton"
+        android:layout_width="255dp"
+        android:layout_height="80dp"
         android:layout_margin="30dp"
-        android:text="pushUps"
-        android:textColor="#EA3788"
+        android:text="Brzuszki"
+        android:textColor="#FFFFFF"
         android:textSize="23sp"
         app:backgroundTint="#6A7FDB"
-        app:layout_constraintBottom_toTopOf="@+id/databaseButton"
+        app:layout_constraintBottom_toTopOf="@+id/targetButtonM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/databaseButton"
-        android:layout_width="256dp"
-        android:layout_height="82dp"
+        android:layout_width="255dp"
+        android:layout_height="80dp"
         android:layout_margin="30dp"
-        android:text="database"
-        android:textColor="#EA3788"
-        android:textSize="23sp"
-        app:backgroundTint="#6A7FDB"
-        app:layout_constraintBottom_toTopOf="@+id/helpButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pushUpButton" />
-
-    <Button
-        android:id="@+id/helpButton"
-        android:layout_width="256dp"
-        android:layout_height="82dp"
-        android:layout_margin="30dp"
-        android:text="help"
-        android:textColor="#EA3788"
+        android:text="Rekordy"
+        android:textColor="#FFFFFF"
         android:textSize="23sp"
         app:backgroundTint="#6A7FDB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/databaseButton" />
+        app:layout_constraintTop_toBottomOf="@+id/targetButtonM" />
+
+    <Button
+        android:id="@+id/targetButtonM"
+        android:layout_width="255dp"
+        android:layout_height="80dp"
+        android:layout_margin="30dp"
+        android:text="cel"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:backgroundTint="#6A7FDB"
+        app:layout_constraintBottom_toTopOf="@+id/databaseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crunchesButton" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>

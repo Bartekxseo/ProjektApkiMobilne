@@ -1,8 +1,10 @@
 package com.example.projekt
 
 import DbHandler
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
+import android.os.Vibrator
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -44,7 +46,6 @@ class CounterActivity : AppCompatActivity() {
             if (exerciseLeftToDo === 0) {
                 startStop = true
                 onPause = false
-                exerciseLeftToDo = exerciseAmount
                 infoText!!.post { infoText!!.text = "Przygotuj trening!" }
                 repeatsText!!.post(Runnable { repeatsText!!.text = "0" })
                 startStopButton!!.post(Runnable { startStopButton!!.text = "Start" })
@@ -57,6 +58,8 @@ class CounterActivity : AppCompatActivity() {
             if(finished)
             {
                 dbHandler.addNewExercise(exerciseAmount)
+                reloadExerciseAmount()
+                exerciseLeftToDo = exerciseAmount;
                 finished = false;
             }
             handler.postDelayed(this, 50)
@@ -67,8 +70,9 @@ class CounterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         handler.post(runnable)
         setContentView(R.layout.activity_counter)
-
         dbHandler = DbHandler(this,null)
+
+        reloadExerciseAmount()
 
         exerciseText = findViewById(R.id.exerciseText)
         backButton = findViewById(R.id.backButton)
@@ -132,19 +136,39 @@ class CounterActivity : AppCompatActivity() {
         gyroscope = Gyroscope(this);
         gyroscope!!.setListener(object : Gyroscope.Listener {
             override fun onRotation(rx: Float, ry: Float, rz: Float) {
-                if (rx < -0.3f && !stopGyro && !onPause && !startStop) {
+                if (rx < -0.5f && !stopGyro && !onPause && !startStop) {
                     exerciseLeftToDo--
+                    vibrate()
                     stopGyro = true
                 }
-                if (rx > 0.3f && !onPause && !startStop) {
+                if (rx > 0.5f && !onPause && !startStop) {
                     stopGyro = false
                 }
             }
         })
     }
+
+    fun vibrate()
+    {
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator.vibrate(200)
+    }
+    fun reloadExerciseAmount()
+    {
+        val target = dbHandler.getTarget()
+        val doneToday = dbHandler.getTodaysExerciseDoneSum()
+
+        if(target >= doneToday)
+        {
+            exerciseAmount = target-doneToday
+            exerciseLeftToDo = exerciseAmount
+        }
+    }
+
     override fun onResume()
     {
         super.onResume()
+        reloadExerciseAmount()
         gyroscope!!.register();
     }
 
